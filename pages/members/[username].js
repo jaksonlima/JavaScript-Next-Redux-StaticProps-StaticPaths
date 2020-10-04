@@ -34,8 +34,8 @@ export const getStaticPaths = async () => {
   };
 };
 
-export const getStaticProps = async (context) => {
-  const { username } = context.params;
+export const getStaticProps = async ({ params }) => {
+  const { username } = params;
 
   const reponse = await fetch(`https://jsonplaceholder.typicode.com/users?username=${username}`);
 
